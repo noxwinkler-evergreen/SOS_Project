@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Post Your Message</h1>
+    
+    <input type="text" id="userInput" placeholder="Enter your message">
+    <button onclick="postMessage()">Post</button>
+    
+    <div id="output">
+        <h3>Your Message:</h3>
+        <p id="displayText"></p>
+    </div>
+
+    <script>
+        function postMessage() {
+            const input = document.getElementById('userInput').value;
+            const output = document.getElementById('output');
+            const displayText = document.getElementById('displayText');
+            
+            if (input.trim() !== '') {
+                displayText.textContent = input;
+                output.style.display = 'block';
+                document.getElementById('userInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
