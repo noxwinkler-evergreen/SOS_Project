@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emerging J</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .j {
+      position: absolute;
+      color: #1e6cff;
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .center-j {
+      font-size: 240px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="j center-j">J</div>
+
+<script>
+  const START_DELAY = 2000; 
+  const SPAWN_INTERVAL = 100;
+  const MAX_JS = 300;
+
+  let count = 0;
+
+  function spawnJ() {
+    if (count >= MAX_JS) return;
+
+    const j = document.createElement("div");
+    j.className = "j";
+
+    // mix of lowercase and uppercase
+    j.textContent = Math.random() > 0.7 ? "J" : "J";
+
+    const size = Math.random() * 120 + 10;
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    const rotation = Math.random() * 360 - 180;
+
+    j.style.fontSize = `${size}px`;
+    j.style.left = `${x}px`;
+    j.style.top = `${y}px`;
+    j.style.transform = `rotate(${rotation}deg)`;
+
+    document.body.appendChild(j);
+    count++;
+  }
+
+  setTimeout(() => {
+    setInterval(spawnJ, SPAWN_INTERVAL);
+  }, START_DELAY);
+</script>
+
+</body>
+</html>
