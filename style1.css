@@ -1,6 +1,145 @@
 @charset "UTF-8";
 
-body {
-  color: #000000;
+/* --- Navbar --- */
+nav ul,
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    width: auto;
 }
+
+nav ul li,
+ul li {
+    float: left;
+}
+
+nav ul li a,
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover,
+ul li a:hover {
+    background-color: #111111;
+}
+
+/* --- Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.page-shell {
+    width: 800px;
+    margin: 24px auto;
+    background: #fff;
+    border: 3px solid #000;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+header {
+    padding: 12px;
+    background: linear-gradient(#eee,#ddd);
+    border-bottom: 2px solid #aaa;
+}
+
+.header {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 15px;
+}
+.img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 auto 15px;
+}
+
+.header h1 { margin-bottom: 10px; }
+.header p { color: #666; line-height: 1.6; }
+
+/* --- Post styles --- */
+.post {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.post h2 { margin-bottom: 10px; color: #333; }
+.post .date {
+    color: #999;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-style: italic;
+}
+.post-content {
+    min-height: 100px;
+    color: #666;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+.hidden-text { color: white; }
+
+/* --- home specific styles --- */
+.logo-placeholder { width: 220px; height: 80px; border: 2px dashed #666; display: inline-block; vertical-align: middle; margin-right: 16px; text-align: center; line-height: 80px; color: #666; font-weight: bold; }
+.sitelabel { display: inline-block; vertical-align: middle; font-size: 1.2em; color: #222; }
+nav { margin-top: 8px; }
+main { padding: 16px; min-height: 300px; }
+.sidebar { width: 200px; float: right; background: #f6f6f6; padding: 8px; border-left: 1px solid #ddd; }
+.content { margin-right: 220px; }
+footer { clear: both; padding: 8px; background: #efefef; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; }
+
+.blink { animation: blinker 1.2s linear infinite; }
+@keyframes blinker { 50% { opacity: 0.0; } }
+
+/*--- navbar doesnt overlap header content ---*/
+nav { background: transparent; }
+
+/*--- Ensure links inherit default block flow in narrow containers ---*/
+nav ul li { display: inline-block; float: none; }
+
+
+
 
